@@ -1,0 +1,19 @@
+CREATE TABLE books (
+  id INTEGER NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  author TEXT NOT NULL,
+  archived BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE VIRTUAL TABLE books_fts USING fts5(
+  title,
+  author,
+  content = 'books',
+  content_rowid = 'id',
+  tokenize = 'trigram remove_diacritics 1'
+);
+
+CREATE TRIGGER books_ai AFTER INSERT ON books BEGIN
+  INSERT INTO books_fts (rowid, title, author)
+  VALUES (new.id, new.title, new.author);
+END;
