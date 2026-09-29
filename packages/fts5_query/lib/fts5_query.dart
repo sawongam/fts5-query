@@ -5,4 +5,5 @@
 /// Start with `FtsFilter`.
 library;
 
+export 'src/fts5_syntax.dart';
 export 'src/search_terms.dart';
