@@ -1,0 +1,18 @@
+# Publishes a package when its tag is pushed: `fts5_query-v1.0.0` or
+# `drift_fts5_query-v1.0.0`. Enable automated publishing for this repository
+# and tag pattern on each package's pub.dev admin page first.
+name: Publish
+
+on:
+  push:
+    tags:
+      - "fts5_query-v[0-9]+.[0-9]+.[0-9]+*"
+      - "drift_fts5_query-v[0-9]+.[0-9]+.[0-9]+*"
+
+jobs:
+  publish:
+    permissions:
+      id-token: write
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+      working-directory: packages/${{ startsWith(github.ref_name, 'drift_') && 'drift_fts5_query' || 'fts5_query' }}

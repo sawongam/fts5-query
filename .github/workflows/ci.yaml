@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  check:
+    name: Dart ${{ matrix.sdk }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sdk: ["3.8", stable]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ matrix.sdk }}
+      - run: dart pub get
+      - name: Generate drift test code
+        working-directory: packages/drift_fts5_query
+        run: dart run build_runner build --delete-conflicting-outputs
+      - run: dart format --output=none --set-exit-if-changed packages
+      - run: dart analyze --fatal-infos packages
+      - run: dart test
+        working-directory: packages/fts5_query
+      - run: dart test
+        working-directory: packages/drift_fts5_query
+
+  minimum-dependencies:
+    name: Lowest drift version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      # Generate with the current drift_dev, then run against the oldest
+      # drift the package allows.
+      - name: Generate drift test code
+        working-directory: packages/drift_fts5_query
+        run: dart run build_runner build --delete-conflicting-outputs
+      - run: dart pub downgrade drift
+      - run: dart test
+        working-directory: packages/fts5_query
+      - run: dart test
+        working-directory: packages/drift_fts5_query
+
+  publish-dry-run:
+    name: Publish dry run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - run: dart pub publish --dry-run
+        working-directory: packages/fts5_query
+      - run: dart pub publish --dry-run
+        working-directory: packages/drift_fts5_query
