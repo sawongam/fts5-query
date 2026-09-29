@@ -1,0 +1,11 @@
+name: fts5_query_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+workspace:
+  - packages/fts5_query
+
+dev_dependencies:
+  lints: ^6.0.0

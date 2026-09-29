@@ -1,0 +1,6 @@
+.dart_tool/
+build/
+coverage/
+pubspec.lock
+*.g.dart
+!packages/drift_fts5_query/example/**/*.g.dart
