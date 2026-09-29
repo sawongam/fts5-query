@@ -6,4 +6,7 @@
 library;
 
 export 'src/fts5_syntax.dart';
+export 'src/fts_clause.dart' show FtsClause;
+export 'src/fts_filter.dart';
+export 'src/fts_tokenizer.dart';
 export 'src/search_terms.dart';
