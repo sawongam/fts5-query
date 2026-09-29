@@ -1,7 +1,7 @@
 # drift_fts5_query
 
 [![pub package](https://img.shields.io/pub/v/drift_fts5_query.svg)](https://pub.dev/packages/drift_fts5_query)
-[![CI](https://github.com/sawongam/fts5_query/actions/workflows/ci.yaml/badge.svg)](https://github.com/sawongam/fts5_query/actions/workflows/ci.yaml)
+[![CI](https://github.com/sawongam/fts5-query/actions/workflows/ci.yaml/badge.svg)](https://github.com/sawongam/fts5-query/actions/workflows/ci.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Filter any [drift](https://pub.dev/packages/drift) query by what a user typed

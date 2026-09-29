@@ -3,8 +3,8 @@ description: >-
   Drift integration for fts5_query: filter any drift query by search-box
   text through an SQLite FTS5 index, as a typed Expression or raw SQL.
 version: 1.0.0
-repository: https://github.com/sawongam/fts5_query/tree/master/packages/drift_fts5_query
-issue_tracker: https://github.com/sawongam/fts5_query/issues
+repository: https://github.com/sawongam/fts5-query/tree/master/packages/drift_fts5_query
+issue_tracker: https://github.com/sawongam/fts5-query/issues
 topics:
   - drift
   - sqlite

@@ -1,7 +1,7 @@
 # fts5_query
 
 [![pub package](https://img.shields.io/pub/v/fts5_query.svg)](https://pub.dev/packages/fts5_query)
-[![CI](https://github.com/sawongam/fts5_query/actions/workflows/ci.yaml/badge.svg)](https://github.com/sawongam/fts5_query/actions/workflows/ci.yaml)
+[![CI](https://github.com/sawongam/fts5-query/actions/workflows/ci.yaml/badge.svg)](https://github.com/sawongam/fts5-query/actions/workflows/ci.yaml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Turn what a user types into a search box into a **safe SQLite FTS5 filter**.
