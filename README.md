@@ -9,7 +9,7 @@ Turn what a user types into a search box into a safe SQLite FTS5 filter.
 
 ## Development
 
-A [pub workspace](https://dart.dev/tools/pub/workspaces); Dart 3.8 or later.
+A [pub workspace](https://dart.dev/tools/pub/workspaces); Dart 3.11 or later.
 
 ```sh
 dart pub get
