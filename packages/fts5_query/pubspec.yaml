@@ -1,0 +1,23 @@
+name: fts5_query
+description: >-
+  Turn search-box text into a safe SQLite FTS5 filter: every term quoted and
+  bound, with a LIKE fallback for short trigram terms. No dependencies.
+version: 1.0.0
+repository: https://github.com/sawongam/fts5_query/tree/master/packages/fts5_query
+issue_tracker: https://github.com/sawongam/fts5_query/issues
+topics:
+  - sqlite
+  - fts5
+  - search
+  - full-text-search
+  - database
+
+environment:
+  sdk: ^3.8.0
+
+resolution: workspace
+
+dev_dependencies:
+  lints: ^6.0.0
+  sqlite3: ^3.0.0
+  test: ^1.26.0
